@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raisyah Photo Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="contact-bar">
+    Hubungi Kami: <span>081227245379</span> &nbsp;|&nbsp; Raisyah Photo Studio
+  </div>
+
+  <div class="hero">
+  <div class="logo-icon">
+    <!-- Pastikan file gambar ini ada di folder yang sama dengan index.html -->
+    <img src="kameraa.jpeg" alt="Raisyah Studio Camera" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+  </div>
+  <div class="studio-name">Raisyah Studio</div>
+  <div class="studio-tagline">Professional Photography</div>
+  <div class="hero-desc">Mengabadikan momen berharga Anda dengan sentuhan profesional dan estetika modern.</div>
+</div>
+  <div class="nav-tabs">
+    <div class="nav-tab active" onclick="showTab('beranda')">Beranda</div>
+    <div class="nav-tab" onclick="showTab('galeri')">Galeri</div>
+    <div class="nav-tab" onclick="showTab('booking')">Booking</div>
+    <div class="nav-tab" onclick="showTab('transaksi')">Transaksi</div>
+    <div class="nav-tab" onclick="showTab('tentang')">Tentang</div>
+  </div>
+
+  <!-- ── BERANDA ─────────────────────────────────────────── -->
+  <div id="beranda" class="section active">
+    <div class="section-title">Paket Foto Kami</div>
+    <div class="packages">
+
+      <div class="package-card">
+        <div class="pkg-name">Paket Basic</div>
+        <div class="pkg-price">Rp 150.000 <span>/ sesi</span></div>
+        <ul class="pkg-features">
+          <li>1 jam sesi foto profesional</li>
+          <li>10 foto digital dengan sentuhan editing</li>
+          <li>1 background premium pilihan</li>
+          <li>File foto resolusi tinggi siap cetak</li>
+          <li>Hasil akhir rapi dan estetis</li>
+        </ul>
+        <button class="btn-book" onclick="pilihPaket('Paket Basic', '150.000')">Pesan Sekarang</button>
+      </div>
+
+      <div class="package-card popular">
+        <div class="badge">Terpopuler</div>
+        <div class="pkg-name">Paket Premium</div>
+        <div class="pkg-price">Rp 350.000 <span>/ sesi</span></div>
+        <ul class="pkg-features">
+          <li>3 jam sesi foto</li>
+          <li>30 foto digital edited</li>
+          <li>3 background pilihan</li>
+          <li>1 set cetak 4R</li>
+          <li>Makeup &amp; styling dasar</li>
+          <li>File resolusi tinggi</li>
+        </ul>
+        <button class="btn-book" onclick="pilihPaket('Paket Premium', '350.000')">Pesan Sekarang</button>
+      </div>
+
+      <div class="package-card">
+        <div class="pkg-name">Paket Eksklusif</div>
+        <div class="pkg-price">Rp 700.000 <span>/ sesi</span></div>
+        <ul class="pkg-features">
+          <li>Full day sesi foto</li>
+          <li>60 foto digital edited</li>
+          <li>Semua background</li>
+          <li>Cetak foto 10 lembar</li>
+          <li>Makeup &amp; styling profesional</li>
+          <li>Album foto fisik</li>
+          <li>Videografi singkat</li>
+        </ul>
+        <button class="btn-book" onclick="pilihPaket('Paket Eksklusif', '700.000')">Pesan Sekarang</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── GALERI ──────────────────────────────────────────── -->
+  <div id="galeri" class="section">
+    <div class="section-title">Galeri Karya</div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <div class="cam-icon"><img src="normal.jpg" alt=""></div>
+        <div>Outdoor Natural</div>
+        <div class="gallery-label">Nature Series</div>
+      </div>
+      <div class="gallery-item">
+        <div class="cam-icon"><img src="prawedding.jpg" alt=""></div>
+        <div>Pre-Wedding</div>
+        <div class="gallery-label">Wedding Series</div>
+      </div>
+      <div class="gallery-item">
+        <div class="cam-icon"><img src="friend.jpg" alt=""></div>
+        <div class="gallery-label">with friends</div>
+      </div>
+      <div class="gallery-item">
+        <div class="cam-icon"><img src="keluarga.jpg" alt=""></div>
+        <div class="gallery-label">Family Series</div>
+      </div>
+      <div class="gallery-item">
+        <div class="cam-icon"><img src="graduationn.jpg" alt=""></div>
+        <div>Wisuda</div>
+        <div class="gallery-label">Graduation Series</div>
+      </div>
+      <div class="gallery-item">
+        <div class="cam-icon"><img src="birthday.jpg" alt=""></div>
+        <div class="gallery-label">Birthday Series</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:1rem; font-size:13px; color:#4ade80;">
+      Hubungi kami untuk melihat portofolio lengkap
+    </div>
+  </div>
+
+  <!-- ── BOOKING ─────────────────────────────────────────── -->
+  <div id="booking" class="section">
+    <div class="section-title">Form Booking</div>
+    <div class="form-group">
+      <label class="form-label">Nama Lengkap</label>
+      <input type="text" id="inp-nama" class="form-input" placeholder="Masukkan nama Anda">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Nomor WhatsApp</label>
+      <input type="text" id="inp-wa" class="form-input" placeholder="Contoh: 08xxxxxxxxxx">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Paket Foto</label>
+      <select id="inp-paket" class="form-select">
+        <option value="">-- Pilih Paket --</option>
+        <option value="Paket Basic - Rp 150.000">Paket Basic - Rp 150.000</option>
+        <option value="Paket Premium - Rp 350.000">Paket Premium - Rp 350.000</option>
+        <option value="Paket Eksklusif - Rp 700.000">Paket Eksklusif - Rp 700.000</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Tanggal Sesi</label>
+      <input type="date" id="inp-tanggal" class="form-input">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Jam Sesi</label>
+      <select id="inp-jam" class="form-select">
+        <option value="">-- Pilih Jam --</option>
+        <option>08:00 - 10:00</option>
+        <option>10:00 - 12:00</option>
+        <option>13:00 - 15:00</option>
+        <option>15:00 - 17:00</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Catatan Tambahan</label>
+      <textarea id="inp-catatan" class="form-textarea" placeholder="Tema, permintaan khusus, dll..."></textarea>
+    </div>
+    <button class="btn-submit" onclick="submitBooking()">Konfirmasi Booking</button>
+  </div>
+
+  <!-- ── TRANSAKSI ───────────────────────────────────────── -->
+  <div id="transaksi" class="section">
+    <div class="section-title">Riwayat Transaksi</div>
+    <div id="tx-list">
+      <div class="tx-card">
+        <div class="tx-header">
+          <div class="tx-id">#RSY-001</div>
+          <div class="tx-status status-confirmed">Terkonfirmasi</div>
+        </div>
+        <div class="tx-name">Siti Nurhaliza</div>
+        <div class="tx-pkg">Paket Premium - Pre-Wedding</div>
+        <div class="tx-date">Sabtu, 19 April 2026 · 10:00 - 12:00</div>
+        <div class="tx-footer">
+          <div class="tx-price">Rp 350.000</div>
+          <button class="tx-whatsapp" onclick="hubungiWA('Siti Nurhaliza', 'Paket Premium', '19 April 2026')">Hubungi</button>
+        </div>
+      </div>
+      <div class="tx-card">
+        <div class="tx-header">
+          <div class="tx-id">#RSY-002</div>
+          <div class="tx-status status-pending">Menunggu</div>
+        </div>
+        <div class="tx-name">Ahmad Fauzi</div>
+        <div class="tx-pkg">Paket Eksklusif - Wisuda</div>
+        <div class="tx-date">Minggu, 20 April 2026 · 08:00 - 10:00</div>
+        <div class="tx-footer">
+          <div class="tx-price">Rp 700.000</div>
+          <button class="tx-whatsapp" onclick="hubungiWA('Ahmad Fauzi', 'Paket Eksklusif', '20 April 2026')">Hubungi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TENTANG ─────────────────────────────────────────── -->
+  <div id="tentang" class="section">
+    <div class="section-title">Tentang Studio</div>
+    <div class="about-card">
+      <div class="about-title">Raisyah Photo Studio</div>
+      <div class="about-text">Studio foto profesional dengan peralatan modern dan tim fotografer berpengalaman. Kami berkomitmen menghasilkan karya foto berkualitas tinggi dengan pelayanan terbaik.</div>
+    </div>
+    <div class="about-card">
+      <div class="about-title">Kontak Kami</div>
+      <div class="contact-info">
+        <div>
+          <div class="contact-detail">Raisyah</div>
+          <div class="contact-sub">Pemilik &amp; Fotografer Utama</div>
+        </div>
+      </div>
+      <div style="margin-top:10px; display:flex; align-items:center; gap:8px;">
+        <div style="font-size:18px;">📞</div>
+        <div>
+          <div class="contact-detail">081227245379</div>
+          <div class="contact-sub">WhatsApp tersedia 08.00 - 21.00</div>
+        </div>
+      </div>
+      <button class="whatsapp-btn" onclick="openWA()">Chat WhatsApp Sekarang</button>
+    </div>
+    <div class="about-card">
+      <div class="about-title">Jam Operasional</div>
+      <div class="about-text">
+        Senin - Jumat: 08.00 - 17.00<br>
+        Sabtu - Minggu: 08.00 - 20.00<br>
+        Hari Libur Nasional: Tutup
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MODAL ───────────────────────────────────────────── -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-box">
+      <div class="modal-icon">🎉</div>
+      <div class="modal-title">Booking Berhasil!</div>
+      <div class="modal-msg">Terima kasih! Booking Anda telah kami terima. Tim Raisyah Studio akan segera menghubungi Anda.</div>
+      <div class="modal-detail" id="modal-detail"></div>
+      <button class="btn-close-modal" onclick="closeModal()">Tutup</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
